@@ -1,0 +1,61 @@
+<!--
+    Gregory Tomchuk
+    Web Developement Periods 7-8 Even
+    11/23/22
+    Hot and Cold
+-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot and Cold</title>
+    <script>
+        function initialize() {
+            numToGuess = (int) (Math.random() * 100) + 1;
+            playerGuess = 50;
+            guessesRemaining = 5;
+        }
+        function guess() {
+            guessesRemaining--;
+        }
+        function addOne() {
+            playerGuess++;
+        }
+        function subtractOne() {
+            playerGuess--;
+        }
+        function addFive() {
+            playerGuess += 5;
+        }
+        function subtractFive() {
+            playerGuess -= 5;
+        }
+        function addTen() {
+            playerGuess += 10;
+        }
+        function subtractTen() {
+            playerGuess -= 10;
+        }
+        function addTwentyFive() {
+            playerGuess += 25;
+        }
+        function subtractTwentyFive() {
+            playerGuess -= 25;
+        }
+
+    </script>
+</head>
+
+<body onload = "initialize">
+    <h1>Hot and Cold</h1>
+    <button onclick = "initialize();">Reset</button>
+
+    
+</body>
+
+</html>
