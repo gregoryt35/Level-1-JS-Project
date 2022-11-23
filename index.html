@@ -2,7 +2,7 @@
     Gregory Tomchuk
     Web Developement Periods 7-8 Even
     11/23/22
-    Hot and Cold
+    Count de Money
 -->
 
 <!DOCTYPE html>
@@ -13,57 +13,151 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hot and Cold</title>
+    <title>Count de Money</title>
+
     <script>
         function initialize() {
-            numToGuess = (int) (Math.random() * 100) + 1;
-            playerGuess = 50;
-            guessesRemaining = 5;
-        }
-        function guess() {
-            guessesRemaining--;
-        }
-        function addOne() {
-            playerGuess++;
-        }
-        function subtractOne() {
-            playerGuess--;
-        }
-        function addFive() {
-            playerGuess += 5;
-        }
-        function subtractFive() {
-            playerGuess -= 5;
-        }
-        function addTen() {
-            playerGuess += 10;
-        }
-        function subtractTen() {
-            playerGuess -= 10;
-        }
-        function addTwentyFive() {
-            playerGuess += 25;
-        }
-        function subtractTwentyFive() {
-            playerGuess -= 25;
-        }
+            numPennies = 0;
+            totalPennyValue = 0;
+            numNickels = 0;
+            totalNickelValue = 0;
+            numDimes = 0;
+            totalDimeValue = 0;
+            numQuarters = 0;
+            totalQuarterValue = 0;
+            totalValue = 0;
 
+            pennies = document.getElementById("numPennies");
+            totalPennies = document.getElementById("totalPennyValue");
+
+            nickels = document.getElementById("numNickels");
+            totalNickels = document.getElementById("totalNickelValue");
+
+            dimes = document.getElementById("numDimes");
+            totalDimes = document.getElementById("totalDimeValue");
+
+            quarters = document.getElementById("numQuarters");
+            totalQuarters = document.getElementById("totalQuarterValue");
+
+            total = document.getElementById("totalValue");
+        }
+        function addPenny() {
+            numPennies++;
+            totalPennyValue += 0.01;
+            totalValue += 0.01;
+
+            display();
+        }
+        function subtractPenny() {
+            if (numPennies > 0) {
+                numPennies--;
+                totalPennyValue -= 0.01;
+                totalValue -= 0.01;
+            }
+
+            display();
+        }
+        function addNickel() {
+            numNickels++;
+            totalNickelValue += 0.05;
+            totalValue += 0.05;
+
+            display();
+        }
+        function subtractNickel() {
+            if (numNickels > 0) {
+                numNickels--;
+                totalNickelValue -= 0.05;
+                totalValue -= 0.05;
+            }
+
+            display();
+        }
+        function addDime() {
+            numDimes++;
+            totalDimeValue += 0.1;
+            totalValue += 0.1;
+
+            display();
+        }
+        function subtractDime() {
+            if (numDimes > 0) {
+                numDimes--;
+                totalDimeValue -= 0.1;
+                totalValue -= 0.1;
+            }
+
+            display();
+        }
+        function addQuarter() {
+            numQuarters++;
+            totalQuarterValue += 0.25;
+            totalValue += 0.25;
+
+            display();
+        }
+        function subtractQuarter() {
+            if (numQuarters > 0) {
+                numQuarters--;
+                totalQuarterValue -= 0.25;
+                totalValue -= 0.25;
+            }
+
+            display();
+        }
+        function display() {
+            pennies.innerHTML = numPennies;
+            totalPennies.innerHTML = totalPennyValue;
+
+            nickels.innerHTML = numNickels;
+            totalNickels.innerHTML = totalNickelValue;
+
+            dimes.innerHTML = numDimes;
+            totalDimes.innerHTML = totalDimeValue;
+
+            quarters.innerHTML = numQuarters;
+            totalQuarters.innerHTML = totalQuarterValue;
+
+            total.innerHTML = totalValue;
+        }
     </script>
+
 </head>
 
-<body onload = "initialize">
-    <h1>Hot and Cold</h1>
-    <button onclick = "addOne();">Add One</button>
-    <button onclick = "subtractOne();">Subtract One</button>
-    <button onclick = "addFive();">Add Five</button>
-    <button onclick = "subtractFive();">Subtract Five</button>
-    <button onclick = "addTen();">Add Ten</button>
-    <button onclick = "subtractTen();">Subtract Ten</button>
-    <button onclick = "addTwentyFive();">Add Twenty-Five</button>
-    <button onclick = "subtractTwentyFive();">Subtract Twenty-Five</button>
-    <button onclick = "initialize();">Reset</button>
+<body onload = "initialize();">
+    <h1>Count de Money</h1>
 
-    
+    <hr />
+
+    <h3>Value of Pennies: $<span id="totalPennyValue"></span></h3>
+    <h4>Number of Pennies: <span id="numPennies"></span></h4>
+    <button onclick="addPenny();">Add Penny</button>
+    <button onclick="subtractPenny();">Subtract Penny</button>
+
+    <hr />
+
+    <h3>Value of Nickels: $<span id="totalNickelValue"></span></h3>
+    <h4>Number of Nickels: <span id="numNickels"></span></h4>
+    <button onclick="addNickel();">Add Nickel</button>
+    <button onclick="subtractNickel();">Subtract Nickel</button>
+
+    <hr />
+
+    <h3>Value of Dimes: $<span id="totalDimeValue"></span></h3>
+    <h4>Number of Dimes: <span id="numDimes"></span></h4>
+    <button onclick="addDime();">Add Dime</button>
+    <button onclick="subtractDime();">Subtract Dime</button>
+
+    <hr />
+
+    <h3>Value of Quarters: $<span id="totalQuarterValue"></span></h3>
+    <h4>Number of Quarters: <span id="numQuarters"></span></h4>
+    <button onclick="addQuarter();">Add Quarter</button>
+    <button onclick="subtractQuarter();">Subtract Quarter</button>
+
+    <hr />
+
+    <h2>Total Value: $<span id="totalValue"></span></h2>
 </body>
 
 </html>
