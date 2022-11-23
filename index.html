@@ -46,6 +46,9 @@
             totalPennyValue += 0.01;
             totalValue += 0.01;
 
+            totalPennyValue = Math.round(totalPennyValue * 100) / 100;
+            totalValue = Math.round(totalValue * 100) / 100;
+
             display();
         }
         function subtractPenny() {
@@ -53,6 +56,9 @@
                 numPennies--;
                 totalPennyValue -= 0.01;
                 totalValue -= 0.01;
+
+                totalPennyValue = Math.round(totalPennyValue * 100) / 100;
+                totalValue = Math.round(totalValue * 100) / 100;
             }
 
             display();
@@ -62,6 +68,9 @@
             totalNickelValue += 0.05;
             totalValue += 0.05;
 
+            totalNickelValue = Math.round(totalNickelValue * 100) / 100;
+            totalValue = Math.round(totalValue * 100) / 100;
+
             display();
         }
         function subtractNickel() {
@@ -69,6 +78,9 @@
                 numNickels--;
                 totalNickelValue -= 0.05;
                 totalValue -= 0.05;
+
+                totalNickelValue = Math.round(totalNickelValue * 100) / 100;
+                totalValue = Math.round(totalValue * 100) / 100;
             }
 
             display();
@@ -78,6 +90,9 @@
             totalDimeValue += 0.1;
             totalValue += 0.1;
 
+            totalDimeValue = Math.round(totalDimeValue * 100) / 100;
+            totalValue = Math.round(totalValue * 100) / 100;
+
             display();
         }
         function subtractDime() {
@@ -85,6 +100,9 @@
                 numDimes--;
                 totalDimeValue -= 0.1;
                 totalValue -= 0.1;
+
+                totalDimeValue = Math.round(totalDimeValue * 100) / 100;
+                totalValue = Math.round(totalValue * 100) / 100;
             }
 
             display();
@@ -94,6 +112,9 @@
             totalQuarterValue += 0.25;
             totalValue += 0.25;
 
+            totalQuarterValue = Math.round(totalQuarterValue * 100) / 100;
+            totalValue = Math.round(totalValue * 100) / 100;
+
             display();
         }
         function subtractQuarter() {
@@ -101,6 +122,9 @@
                 numQuarters--;
                 totalQuarterValue -= 0.25;
                 totalValue -= 0.25;
+
+                totalQuarterValue = Math.round(totalQuarterValue * 100) / 100;
+                totalValue = Math.round(totalValue * 100) / 100;
             }
 
             display();
